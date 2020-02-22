@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -21,14 +18,15 @@ import java.util.Objects;
 @Table(name = "Account_Entity")
 public class AccountEntity {
 
+
     @Id
-    @Column(name = "IBAN")
+    @Column(name = "IBAN", nullable = false)
     private String iban;
-    @Column(name = "CURENCY")
+    @Column(name = "CURENCY", nullable = false)
     private String ccy;
-    @Column(name = "BALANCE")
+    @Column(name = "BALANCE", nullable = false)
     private Long balance;
-    @Column(name = "LAST_UPDATE_DATE")
+    @Column(name = "LAST_UPDATE_DATE", nullable = false)
     private LocalDate lastUpdateDate;
 
 
