@@ -1,18 +1,14 @@
 package eu.raiffaisen.accountservicerf.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
+
 @Data
 @Entity
 @Table(name = "Account_Entity")
@@ -29,6 +25,47 @@ public class AccountEntity {
     @Column(name = "LAST_UPDATE_DATE", nullable = false)
     private LocalDate lastUpdateDate;
 
+    public AccountEntity() {
+    }
+
+    public AccountEntity(String iban, String ccy, Long balance, LocalDate lastUpdateDate) {
+        this.iban = iban;
+        this.ccy = ccy;
+        this.balance = balance;
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    public String getCcy() {
+        return ccy;
+    }
+
+    public void setCcy(String ccy) {
+        this.ccy = ccy;
+    }
+
+    public Long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Long balance) {
+        this.balance = balance;
+    }
+
+    public LocalDate getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(LocalDate lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
 
     @Override
     public boolean equals(Object o) {

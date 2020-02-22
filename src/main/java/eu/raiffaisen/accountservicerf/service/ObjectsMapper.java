@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface ObjectsMapper {
 
-    AccountDTO mapperToAccountDTO(AccountEntity accountEntity);
-    AccountEntity mapperToAccountEntity(AccountDTO accountDTO);
+    AccountDTO accountEntityToAccountDTO(AccountEntity accountEntity);
+    AccountEntity accountDTOToAccountEntity(AccountDTO accountDTO);
 
 }

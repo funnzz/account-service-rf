@@ -21,11 +21,11 @@ public class AccountService {
     public AccountDTO getAccount(String iban) throws Exception {
         Optional<AccountEntity> accountEntityOptional = accountRepository.findByIban(iban);
 
-        return accountEntityOptional.map(accountEntity->objectsMapper.mapperToAccountDTO(accountEntity)).orElseThrow(()-> new Exception("not found"));
+        return accountEntityOptional.map(p->objectsMapper.accountEntityToAccountDTO(p)).orElseThrow(()-> new Exception("not found"));
     }
 
     public void saveAccount(AccountDTO accountDTO){
-        accountRepository.save(objectsMapper.mapperToAccountEntity(accountDTO));
+        accountRepository.save(objectsMapper.accountDTOToAccountEntity(accountDTO));
     }
 
 
