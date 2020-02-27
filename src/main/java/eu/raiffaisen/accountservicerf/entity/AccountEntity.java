@@ -1,6 +1,5 @@
 package eu.raiffaisen.accountservicerf.entity;
 
-import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,7 +8,7 @@ import java.util.Objects;
 
 
 
-@Data
+
 @Entity
 @Table(name = "Account_Entity")
 public class AccountEntity {
@@ -21,14 +20,14 @@ public class AccountEntity {
     @Column(name = "CURENCY", nullable = false)
     private String ccy;
     @Column(name = "BALANCE", nullable = false)
-    private Long balance;
+    private Double balance;
     @Column(name = "LAST_UPDATE_DATE", nullable = false)
     private LocalDate lastUpdateDate;
 
     public AccountEntity() {
     }
 
-    public AccountEntity(String iban, String ccy, Long balance, LocalDate lastUpdateDate) {
+    public AccountEntity(String iban, String ccy, Double balance, LocalDate lastUpdateDate) {
         this.iban = iban;
         this.ccy = ccy;
         this.balance = balance;
@@ -51,11 +50,11 @@ public class AccountEntity {
         this.ccy = ccy;
     }
 
-    public Long getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -90,3 +89,4 @@ public class AccountEntity {
                 '}';
     }
 }
+

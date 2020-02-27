@@ -1,18 +1,21 @@
 package eu.raiffaisen.accountservicerf.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExchangeRatesDTO implements Serializable {
 
     private static final long serialVersionUID = 5765003232033187827L;
 
     private String base;
     private LocalDate date;
-    private Map rates;
+    private HashMap<String,Double> rates;
 
     public String getBase() {
         return base;
@@ -30,11 +33,11 @@ public class ExchangeRatesDTO implements Serializable {
         this.date = date;
     }
 
-    public Map getRates() {
+    public HashMap<String, Double> getRates() {
         return rates;
     }
 
-    public void setRates(Map rates) {
+    public void setRates(HashMap<String, Double> rates) {
         this.rates = rates;
     }
 

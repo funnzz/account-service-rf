@@ -6,20 +6,20 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 
-@Data
+
 public class AccountDTO implements Serializable {
 
     private static final long serialVersionUID = -9179825084544697337L;
 
     private String iban;
     private String ccy;
-    private Long balance;
+    private Double balance;
     private LocalDate lastUpdateDate;
 
     public AccountDTO() {
     }
 
-    public AccountDTO(String iban, String ccy, Long balance, LocalDate lastUpdateDate) {
+    public AccountDTO(String iban, String ccy, Double balance, LocalDate lastUpdateDate) {
         this.iban = iban;
         this.ccy = ccy;
         this.balance = balance;
@@ -42,11 +42,11 @@ public class AccountDTO implements Serializable {
         this.ccy = ccy;
     }
 
-    public Long getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -57,4 +57,6 @@ public class AccountDTO implements Serializable {
     public void setLastUpdateDate(LocalDate lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
     }
+
+
 }

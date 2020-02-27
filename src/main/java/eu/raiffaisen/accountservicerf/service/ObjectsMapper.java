@@ -4,6 +4,7 @@ import eu.raiffaisen.accountservicerf.dto.AccountDTO;
 import eu.raiffaisen.accountservicerf.entity.AccountEntity;
 import org.mapstruct.Mapper;
 
+
 @Mapper
 public interface ObjectsMapper {
 

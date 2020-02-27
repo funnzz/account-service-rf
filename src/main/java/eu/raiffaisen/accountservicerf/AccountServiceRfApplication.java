@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-//@EnableCaching
 public class AccountServiceRfApplication {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountServiceRfApplication.class);

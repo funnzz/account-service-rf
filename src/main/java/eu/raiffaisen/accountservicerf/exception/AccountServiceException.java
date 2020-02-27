@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class AccountServiceException extends RuntimeException {
+public class AccountServiceException extends Exception {
 
     public AccountServiceException(String exception) {
         super(exception);
